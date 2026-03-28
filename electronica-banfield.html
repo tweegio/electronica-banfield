@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Electrónica en Banfield</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="logo">Electrónica<span style="color:var(--lila-light)"> Banfield</span></div>
+  <ul>
+    <li><a href="#productos">Productos</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="https://wa.me/5491100000000?text=Hola!%20Quiero%20consultar%20sobre%20un%20producto" target="_blank" class="nav-cta">WhatsApp</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="badge">⚡ Tecnología en Banfield</div>
+    <h1>Tu tienda de<br><span class="accent-g">electrónica</span><br><span class="accent-l">de confianza</span></h1>
+    <p class="hero-desc">Smartphones, notebooks, accesorios y más. Asesoramiento personalizado, precios honestos y garantía real. A metros del centro de Banfield.</p>
+    <div class="hero-actions">
+      <a href="#productos" class="btn-primary"><span>Ver productos</span><span>→</span></a>
+      <a href="https://wa.me/5491100000000?text=Hola!%20Quiero%20consultar%20sobre%20un%20producto" target="_blank" class="btn-ghost"><span>💬</span><span>Consultar ahora</span></a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-phone-wrap">
+      <div class="glow-orb orb1"></div>
+      <div class="glow-orb orb2"></div>
+      <div class="hero-img-container">
+        <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=640&q=80" alt="Auriculares Sony" />
+        <div class="floating-chip chip1">
+          <span style="font-size:1.3rem">🎧</span>
+          <div>
+            <div class="chip-label">Más vendido</div>
+            <div class="chip-value">Sony WH-1000XM5</div>
+          </div>
+        </div>
+        <div class="floating-chip chip2">
+          <span style="font-size:1.3rem">✅</span>
+          <div>
+            <div class="chip-label">Garantía</div>
+            <div class="chip-value">12 meses</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat reveal"><span class="stat-num">+2500</span><span class="stat-label">Clientes satisfechos</span></div>
+  <div class="stat reveal"><span class="stat-num">8 años</span><span class="stat-label">En el mercado</span></div>
+  <div class="stat reveal"><span class="stat-num">+500</span><span class="stat-label">Productos disponibles</span></div>
+</div>
+
+<!-- PRODUCTOS -->
+<section class="productos" id="productos">
+  <div class="productos-header">
+    <div>
+      <div class="section-tag">Catálogo</div>
+      <h2 class="section-title">Nuestros productos</h2>
+    </div>
+    <div class="filter-tabs">
+      <button class="filter-tab active" onclick="filtrar(this,'todos')">Todos</button>
+      <button class="filter-tab" onclick="filtrar(this,'celulares')">Celulares</button>
+      <button class="filter-tab" onclick="filtrar(this,'audio')">Audio</button>
+      <button class="filter-tab" onclick="filtrar(this,'accesorios')">Accesorios</button>
+    </div>
+  </div>
+  <div class="productos-grid" id="grid">
+    <div class="product-card" data-cat="celulares">
+      <span class="product-badge">🔥 Oferta</span>
+      <img class="product-img" src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&q=80" alt="iPhone 15">
+      <div class="product-info">
+        <div class="product-category">Celulares</div>
+        <div class="product-name">iPhone 15 128GB</div>
+        <p class="product-desc">Chip A16, cámara 48MP, Dynamic Island. Caja sellada con garantía oficial.</p>
+        <div class="product-footer">
+          <span class="product-price">$1.399.999</span>
+          <a href="https://wa.me/5491100000000?text=Hola!%20Me%20interesa%20el%20iPhone%2015" target="_blank" class="btn-wa">💬 Consultar</a>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" data-cat="audio">
+      <img class="product-img" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80" alt="Sony WH">
+      <div class="product-info">
+        <div class="product-category">Audio</div>
+        <div class="product-name">Sony WH-1000XM5</div>
+        <p class="product-desc">Cancelación de ruido líder en el mercado. 30hs de batería. Plegable.</p>
+        <div class="product-footer">
+          <span class="product-price">$349.999</span>
+          <a href="https://wa.me/5491100000000?text=Hola!%20Me%20interesan%20los%20Sony%20WH-1000XM5" target="_blank" class="btn-wa">💬 Consultar</a>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" data-cat="celulares">
+      <span class="product-badge" style="background:linear-gradient(135deg,var(--lila),var(--lila-dark))">Nuevo</span>
+      <img class="product-img" src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=500&q=80" alt="Samsung S24">
+      <div class="product-info">
+        <div class="product-category">Celulares</div>
+        <div class="product-name">Samsung Galaxy S24</div>
+        <p class="product-desc">Snapdragon 8 Gen 3, pantalla AMOLED 6.2", 7 años de actualizaciones.</p>
+        <div class="product-footer">
+          <span class="product-price">$1.199.999</span>
+          <a href="https://wa.me/5491100000000?text=Hola!%20Me%20interesa%20el%20Samsung%20Galaxy%20S24" target="_blank" class="btn-wa">💬 Consultar</a>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" data-cat="accesorios">
+      <img class="product-img" src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500&q=80" alt="Apple Watch">
+      <div class="product-info">
+        <div class="product-category">Accesorios</div>
+        <div class="product-name">Apple Watch SE 2</div>
+        <p class="product-desc">GPS, detector de accidentes, monitor cardíaco. Caja 40mm aluminio.</p>
+        <div class="product-footer">
+          <span class="product-price">$279.999</span>
+          <a href="https://wa.me/5491100000000?text=Hola!%20Me%20interesa%20el%20Apple%20Watch%20SE" target="_blank" class="btn-wa">💬 Consultar</a>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" data-cat="audio">
+      <img class="product-img" src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&q=80" alt="AirPods">
+      <div class="product-info">
+        <div class="product-category">Audio</div>
+        <div class="product-name">AirPods Pro 2da gen</div>
+        <p class="product-desc">Cancelación activa adaptativa, chip H2, audio espacial personalizado.</p>
+        <div class="product-footer">
+          <span class="product-price">$289.999</span>
+          <a href="https://wa.me/5491100000000?text=Hola!%20Me%20interesan%20los%20AirPods%20Pro" target="_blank" class="btn-wa">💬 Consultar</a>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" data-cat="accesorios">
+      <span class="product-badge">🔥 Oferta</span>
+      <img class="product-img" src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&q=80" alt="MacBook">
+      <div class="product-info">
+        <div class="product-category">Computación</div>
+        <div class="product-name">MacBook Air M2</div>
+        <p class="product-desc">Chip M2, 8GB RAM, 256GB SSD. Pantalla Liquid Retina 13.6". Sin ventilador.</p>
+        <div class="product-footer">
+          <span class="product-price">$2.199.999</span>
+          <a href="https://wa.me/5491100000000?text=Hola!%20Me%20interesa%20la%20MacBook%20Air%20M2" target="_blank" class="btn-wa">💬 Consultar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARCAS -->
+<div class="marcas">
+  <p class="marcas-title">Marcas que trabajamos</p>
+  <div class="marcas-track">
+    <div class="marca">Apple</div>
+    <div class="marca">Samsung</div>
+    <div class="marca">Sony</div>
+    <div class="marca">Motorola</div>
+    <div class="marca">Xiaomi</div>
+    <div class="marca">JBL</div>
+    <div class="marca">LG</div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="features" id="nosotros">
+  <div style="text-align:center;margin-bottom:3rem">
+    <div class="section-tag" style="justify-content:center">¿Por qué elegirnos?</div>
+    <h2 class="section-title">Más que una tienda</h2>
+    <p class="section-sub" style="margin:0 auto;text-align:center">Somos vecinos de Banfield con 8 años atendiendo la comunidad con honestidad y pasión por la tecnología.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card reveal"><div class="feature-icon">🛡️</div><div class="feature-title">Garantía real</div><p class="feature-desc">Todos nuestros productos tienen garantía de 3 meses. Te acompañamos en todo el proceso.</p></div>
+    <div class="feature-card reveal"><div class="feature-icon">💬</div><div class="feature-title">Asesoramiento gratis</div><p class="feature-desc">Antes de comprar, hablá con nosotros. Te ayudamos a elegir lo mejor para tu presupuesto.</p></div>
+    <div class="feature-card reveal"><div class="feature-icon">💳</div><div class="feature-title">Todas las cuotas</div><p class="feature-desc">Financiamiento en hasta 12 cuotas con tarjetas seleccionadas. Consultá condiciones.</p></div>
+    <div class="feature-card reveal"><div class="feature-icon">🔧</div><div class="feature-title">Servicio técnico</div><p class="feature-desc">Reparación de pantallas, baterías y más. Diagnóstico sin cargo para clientes regulares.</p></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div style="text-align:center;margin-bottom:3rem">
+    <div class="section-tag" style="justify-content:center">Clientes felices</div>
+    <h2 class="section-title">Lo que dicen de nosotros</h2>
+  </div>
+  <div class="test-grid">
+    <div class="test-card reveal">
+      <div class="test-quote"></div>
+      <p class="test-text">Compré mi iPhone acá y quedé re conforme. Me explicaron todo, el precio era el mejor de la zona y lo tuve en el día. Recomiendo 100%.</p>
+      <div class="test-author">
+        <img class="test-avatar" src="https://i.pravatar.cc/80?img=12" alt="Valentina">
+        <div><div class="test-name">Valentina R.</div><div class="test-stars">★★★★★</div></div>
+      </div>
+    </div>
+    <div class="test-card reveal">
+      <div class="test-quote"></div>
+      <p class="test-text">Me rompí la pantalla del Samsung y en dos horas ya estaba listo. Precio justo y atención impecable. Es la única opción en Banfield.</p>
+      <div class="test-author">
+        <img class="test-avatar" src="https://i.pravatar.cc/80?img=33" alt="Marcos">
+        <div><div class="test-name">Marcos G.</div><div class="test-stars">★★★★★</div></div>
+      </div>
+    </div>
+    <div class="test-card reveal">
+      <div class="test-quote"></div>
+      <p class="test-text">Los auriculares Sony que compré son una maravilla. Me asesoraron muy bien antes de elegir. El local es copado y super amigable.</p>
+      <div class="test-author">
+        <img class="test-avatar" src="https://i.pravatar.cc/80?img=47" alt="Luciana">
+        <div><div class="test-name">Luciana M.</div><div class="test-stars">★★★★★</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+  <div class="contacto-grid">
+    <div>
+      <div class="section-tag">Visitanos</div>
+      <h2 class="section-title">Estamos en Banfield</h2>
+      <p class="section-sub">Pasá por el local, escribinos por WhatsApp o llamanos. Estamos para ayudarte.</p>
+      <div class="info-items">
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div><div class="info-label">Dirección</div><div class="info-val">Av. Alsina 1457, Banfield<br>Partido de Lomas de Zamora, Buenos Aires</div></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📞</div>
+          <div><div class="info-label">Teléfono</div><div class="info-val">011 4242-7890</div></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📧</div>
+          <div><div class="info-label">Email</div><div class="info-val"><a href="contacto@electronica-banfield.com.ar" class="__cf_email__" data-cfemail="1b72757d745b6f7e787375746d7a36797a757d727e777f35787476357a69">contacto@electronica-banfield.com.ar</a></div></div>
+        </div>
+      </div>
+      <a href="https://wa.me/5491100000000?text=Hola!%20Quiero%20consultar%20sobre%20un%20producto" target="_blank" class="wa-cta-big">
+        <span style="font-size:1.6rem">💬</span>
+        <div>
+          <div style="font-size:.76rem;opacity:.8">Respondemos al toque</div>
+          <div>Escribinos por WhatsApp</div>
+        </div>
+      </a>
+      <div class="horarios-card">
+        <div class="horarios-title">🕐 Horarios de atención</div>
+        <div class="horario-row"><span class="dia">Lunes a Viernes</span><span class="hora">9:00 – 20:00</span></div>
+        <div class="horario-row"><span class="dia">Sábados</span><span class="hora">9:00 – 18:00</span></div>
+        <div class="horario-row"><span class="dia">Domingos</span><span class="hora">Cerrado</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="mapa-wrap">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.458!2d-58.3972!3d-34.7478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd3d2b53e1d6f%3A0x5a7e9a1c0d9b4f7e!2sAv.%20Alsina%2C%20Banfield%2C%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1700000000000" allowfullscreen="" loading="lazy" title="TechNova Banfield"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">Tech<span style="color:var(--lila-light)">Nova</span></div>
+      <p>Tu tienda de electrónica de confianza en Banfield. Productos originales, atención personalizada y los mejores precios de la zona.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Productos</h4>
+      <ul>
+        <li><a href="#">Smartphones</a></li>
+        <li><a href="#">Auriculares</a></li>
+        <li><a href="#">Smartwatches</a></li>
+        <li><a href="#">Notebooks</a></li>
+        <li><a href="#">Accesorios</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="#">Servicio técnico</a></li>
+        <li><a href="#">Garantías</a></li>
+        <li><a href="#">Financiamiento</a></li>
+        <li><a href="#">Asesoramiento</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 Electrónica en Banfield. Todos los derechos reservados.</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/5491100000000?text=Hola!%20Quiero%20consultar%20sobre%20un%20producto" target="_blank" class="wa-float" title="WhatsApp">💬</a>
+
+<script src="scrip.js"></script>
+
+</body>
+</html>
