@@ -979,16 +979,18 @@
      transform: translateY(0);
  }
 
- /* ─────────────────────────────────────────
-       RESPONSIVE — Mobile-first breakpoints
-       xs  : < 480px   (celulares chicos: iPhone SE, Galaxy A)
-       sm  : 480–599px (celulares grandes: iPhone 14, Pixel)
-       md  : 600–767px (celulares XL / phablets)
-       lg  : 768–1023px (tablets)
-       xl  : ≥ 1024px  (desktop — estilos base ya cubren esto)
-    ───────────────────────────────────────── */
 
- /* ── TABLET  768–1023px ── */
+ /* ═══════════════════════════════════════════════════════
+      RESPONSIVE — Sistema completo mobile-first
+      xl  : >= 1024px  (desktop — estilos base)
+      lg  : 768-1023px (tablets)
+      md  : 600-767px  (phablets)
+      sm  : 480-599px  (celulares grandes)
+      xs  : 360-479px  (iPhone SE, Galaxy A)
+      xxs : < 360px    (Galaxy A12, Moto E)
+   ═══════════════════════════════════════════════════════ */
+
+ /* ── TABLET  768-1023px ── */
  @media (max-width: 1023px) {
      nav {
          padding: 1rem 2rem;
@@ -1001,6 +1003,16 @@
      .hero {
          padding: 7rem 2rem 4rem;
          gap: 2rem;
+     }
+
+     .hero-phone-wrap {
+         width: 300px;
+         height: 370px;
+     }
+
+     .hero-img-container {
+         width: 270px;
+         height: 340px;
      }
 
      section {
@@ -1027,9 +1039,13 @@
      .productos-grid {
          grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
      }
+
+     .test-grid {
+         grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+     }
  }
 
- /* ── TABLET CHICA / PHABLET  600–767px ── */
+ /* ── PHABLET  600-767px ── */
  @media (max-width: 767px) {
      nav {
          padding: 1rem 1.5rem;
@@ -1039,7 +1055,6 @@
          display: none;
      }
 
-     /* Hamburger placeholder — mostramos solo logo + WA */
      .nav-wa-mobile {
          display: inline-flex !important;
          align-items: center;
@@ -1058,6 +1073,15 @@
          padding: 6.5rem 1.5rem 3rem;
          text-align: center;
          min-height: auto;
+         gap: 2rem;
+     }
+
+     .hero-content {
+         order: 2;
+     }
+
+     .hero-visual {
+         order: 1;
      }
 
      .hero-desc {
@@ -1067,11 +1091,6 @@
 
      .hero-actions {
          justify-content: center;
-     }
-
-     .hero-visual {
-         margin-top: 2.5rem;
-         order: -1;
      }
 
      .hero-phone-wrap {
@@ -1097,7 +1116,11 @@
      }
 
      .stat-num {
-         font-size: 2rem;
+         font-size: 1.9rem;
+     }
+
+     .stat-label {
+         font-size: .8rem;
      }
 
      section {
@@ -1119,10 +1142,16 @@
      .productos-header {
          flex-direction: column;
          align-items: flex-start;
+         gap: 1.2rem;
+     }
+
+     .filter-tabs {
+         width: 100%;
      }
 
      .productos-grid {
-         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+         grid-template-columns: repeat(2, 1fr);
+         gap: 1rem;
      }
 
      .features-grid {
@@ -1158,14 +1187,14 @@
      }
  }
 
- /* ── CELULARES  480–599px ── */
+ /* ── CELULARES GRANDES  480-599px ── */
  @media (max-width: 599px) {
      .logo {
-         font-size: 1.4rem;
+         font-size: 1.35rem;
      }
 
      h1 {
-         font-size: clamp(2rem, 8vw, 2.8rem);
+         font-size: clamp(1.9rem, 8vw, 2.6rem);
          letter-spacing: -1px;
      }
 
@@ -1174,13 +1203,13 @@
      }
 
      .hero-desc {
-         font-size: 1rem;
+         font-size: .98rem;
      }
 
      .btn-primary,
      .btn-ghost {
          padding: .8rem 1.5rem;
-         font-size: .95rem;
+         font-size: .93rem;
      }
 
      .stats {
@@ -1188,7 +1217,7 @@
      }
 
      .stat {
-         padding: 1.5rem .5rem;
+         padding: 1.5rem .6rem;
      }
 
      .stat-num {
@@ -1196,7 +1225,7 @@
      }
 
      .stat-label {
-         font-size: .78rem;
+         font-size: .74rem;
      }
 
      section {
@@ -1224,7 +1253,7 @@
      }
 
      .filter-tabs {
-         gap: .4rem;
+         gap: .35rem;
      }
 
      .filter-tab {
@@ -1239,6 +1268,17 @@
 
      .product-img {
          height: 200px;
+     }
+
+     .product-footer {
+         flex-wrap: wrap;
+         gap: .6rem;
+     }
+
+     .btn-wa {
+         flex: 1;
+         justify-content: center;
+         min-width: 110px;
      }
 
      .features-grid {
@@ -1272,7 +1312,7 @@
      }
 
      .footer-bottom {
-         font-size: .75rem;
+         font-size: .78rem;
      }
 
      .wa-float {
@@ -1284,18 +1324,20 @@
      }
  }
 
- /* ── CELULARES CHICOS  < 480px (iPhone SE 375px, Galaxy A 360px) ── */
+ /* ── CELULARES  360-479px (iPhone SE, Galaxy A) ── */
  @media (max-width: 479px) {
      nav {
          padding: .9rem 1rem;
      }
 
      .logo {
-         font-size: 1.3rem;
+         font-size: 1.25rem;
+         letter-spacing: -.5px;
      }
 
      h1 {
-         font-size: clamp(1.9rem, 9vw, 2.5rem);
+         font-size: clamp(1.8rem, 9vw, 2.3rem);
+         letter-spacing: -.5px;
      }
 
      .hero {
@@ -1323,27 +1365,47 @@
      }
 
      .stat {
-         padding: 1.2rem;
+         padding: 1.4rem 1.2rem;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         gap: 1rem;
+         text-align: left;
      }
 
      .stat-num {
          font-size: 2rem;
+         flex-shrink: 0;
+     }
+
+     .stat-label {
+         font-size: .82rem;
+         margin-top: 0;
      }
 
      section {
          padding: 3rem 1rem;
      }
 
-     .horario-row {
-         font-size: .82rem;
+     .section-title {
+         font-size: clamp(1.4rem, 7vw, 1.9rem);
+     }
+
+     .section-sub {
+         font-size: .88rem;
+         margin-bottom: 2rem;
+     }
+
+     .product-name {
+         font-size: 1rem;
      }
 
      .product-price {
          font-size: 1.15rem;
      }
 
-     .product-name {
-         font-size: 1rem;
+     .horario-row {
+         font-size: .82rem;
      }
 
      .info-icon {
@@ -1353,7 +1415,7 @@
      }
 
      .info-val {
-         font-size: .9rem;
+         font-size: .88rem;
      }
 
      .footer-grid {
@@ -1363,19 +1425,45 @@
      footer {
          padding: 2.5rem 1rem 1.5rem;
      }
- }
 
- /* ── CELULARES MUY CHICOS  < 360px (Galaxy A12, Moto E) ── */
- @media (max-width: 359px) {
-     h1 {
-         font-size: 1.7rem;
-         letter-spacing: -.5px;
+     .hero-actions {
+         flex-direction: column;
+         align-items: center;
+         gap: .8rem;
      }
 
      .btn-primary,
      .btn-ghost {
-         font-size: .88rem;
-         padding: .7rem 1.2rem;
+         width: 100%;
+         max-width: 280px;
+         justify-content: center;
+     }
+ }
+
+ /* ── CELULARES MUY CHICOS  < 360px (Galaxy A12, Moto E) ── */
+ @media (max-width: 359px) {
+     nav {
+         padding: .8rem .8rem;
+     }
+
+     .logo {
+         font-size: 1.1rem;
+     }
+
+     h1 {
+         font-size: 1.65rem;
+         letter-spacing: -.5px;
+     }
+
+     .hero {
+         padding: 5rem .9rem 1.8rem;
+     }
+
+     .btn-primary,
+     .btn-ghost {
+         font-size: .85rem;
+         padding: .7rem 1.1rem;
+         max-width: 100%;
      }
 
      .hero-phone-wrap {
@@ -1390,10 +1478,34 @@
 
      .filter-tab {
          font-size: .75rem;
-         padding: .35rem .7rem;
+         padding: .35rem .65rem;
      }
 
      .product-price {
-         font-size: 1.05rem;
+         font-size: 1rem;
+     }
+
+     .product-info {
+         padding: 1.1rem;
+     }
+
+     .feature-card {
+         padding: 1.4rem;
+     }
+
+     .test-card {
+         padding: 1.4rem;
+     }
+
+     .mapa-wrap {
+         height: 230px;
+     }
+
+     .wa-float {
+         width: 46px;
+         height: 46px;
+         font-size: 1.35rem;
+         bottom: 1rem;
+         right: 1rem;
      }
  }
